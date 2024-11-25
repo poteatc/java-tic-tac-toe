@@ -3,13 +3,13 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        boolean[] board = new boolean[]{
-                false, false, false,
-                false, false, false,
-                false, false, false
-        };
+    static boolean[] board = new boolean[]{
+            false, false, false,
+            false, false, false,
+            false, false, false
+    };
 
+    public static void main(String[] args) {
         System.out.println("Hello world!");
         //TODO : print the game intro
         System.out.println("Welcome to Tic-Tac-Toe!");
@@ -35,6 +35,17 @@ public class Main {
         } else {
             System.out.println(choice + " selected.");
             board[choice - 1] = true;
+        }
+        printBoard();
+    }
+
+    public static void printBoard() {
+        for (int i = 0; i < board.length; i++) {
+            if (board[i] == false) {
+                System.out.println(i);
+            } else {
+                System.out.println("X");
+            }
         }
     }
 }
